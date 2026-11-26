@@ -10,10 +10,10 @@ function Login() {
 
           <label className="block mb-2">Email</label>
 
-          <input type="email" placeholder="Enter email" className="w-full border p-2 rounded mb-4" required></input>
+          <input type="email" placeholder="Enter your email" className="w-full border p-2 rounded mb-4" required></input>
           <label className="block mb-2">Password</label>
 
-          <input type="password" placeholder="Enter password" className="w-full border p-2 rounded mb-4" required ></input>
+          <input type="password" placeholder="Enter your password" className="w-full border p-2 rounded mb-4" required ></input>
 
           <button type="submit" className="w-full bg-blue-500 p-2 rounded "> Login </button>
         </form>
