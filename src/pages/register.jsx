@@ -7,7 +7,7 @@ function Register() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert('Welcome ${name}! Registration successful.');
+    alert('Welcome ${name}! Registration successful');
   }
 
   return (
