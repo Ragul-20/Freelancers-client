@@ -4,15 +4,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "./components/schema/registerschema";
 
 function Register() {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm({
-    resolver: zodResolver(registerSchema),
-    defaultValues: { role: "client" },
-  });
-  const role = watch("role");
-  function handleRegister(data) {
-    alert(`Welcome ${data.name}! Registration successful.`);
-    console.log(data);
-  } 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('Welcome ${name}! Registration successful.');
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <form onSubmit={handleSubmit(handleRegister)} className="bg-white p-8 rounded-xl shadow-md w-full max-w-md space-y-4">
