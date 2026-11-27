@@ -1,6 +1,7 @@
 function ClientDashboard() {
     return (
         <>
+        <h1>ClientDashboard</h1>
         </>
     );
 }

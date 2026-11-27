@@ -1,6 +1,7 @@
 function ClientProposals() {
     return (
         <>
+        <h1>ClientProposals</h1>
         </>
     );
 }

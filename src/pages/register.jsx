@@ -1,16 +1,18 @@
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema } from "./components/schema/registerschema";
+import { registerSchema } from "./components/forschema/registerschema";
 
 function Register() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+    resolver: zodResolver(registerSchema),
+    defaultValues: { role: "client" },
+  });
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    alert('Welcome ${name}! Registration successful.');
+  const role = watch("role");
+
+  function handleRegister(data) {
+    alert(`Welcome ${data.name}! Registration successful.`);
+    console.log(data);
   }
 
   return (
