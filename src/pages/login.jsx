@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 function Login() {
-  const [showPassword, setShowPassword] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   function handleLogin(data) {
@@ -22,11 +21,8 @@ function Login() {
           <p className="text-red-500 text-sm mb-3">{errors.email?.message}</p>
 
           <label className="block mb-2">Password</label>
-          <input {...register("password", { required: "Password is required", minLength: { value: 8, message: "Password must be at least 8 characters" } })} type={showPassword ? "text" : "password"} placeholder="Enter your password" className="w-full border p-2 rounded mb-2" />
+          <input {...register("password", { required: "Password is required", minLength: { value: 8, message: "Password must be at least 8 characters" } })} type="password" placeholder="Enter your password" className="w-full border p-2 rounded mb-2" />
           <p className="text-red-500 text-sm mb-3">{errors.password?.message}</p>
-
-          <label className="flex items-center gap-2 mb-4"><input type="checkbox" checked={showPassword} onChange={() => setShowPassword(!showPassword)} /> Show Password</label>
-
           <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Login</button>
         </form>
 
