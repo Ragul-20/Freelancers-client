@@ -7,7 +7,7 @@ function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   function handleLogin(data) {
-    alert(`Welcome to Collabio, ${data.email}!`);
+    alert(`Welcome to Collabio, ${data.email} !`);
     console.log(data);
   }
 
